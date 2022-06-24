@@ -30,7 +30,7 @@ export default{
             if (localStorage.getItem('email')==this.email){
                 if(localStorage.getItem('password')==this.password){
                     alert('Login Berhasil')
-                    this.$router.push('/')
+                    this.$router.push('/productlist')
                 }
             }else{
                 alert('Login Gagal')
