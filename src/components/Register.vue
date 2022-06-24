@@ -29,14 +29,19 @@ import axios from 'axios'
             }
         },
         methods: {
-            async handleSubmit(){
-                await axios.post('register', {
-                    username : this.username,
-                    email : this.email,
-                    password : this.password
-                });
-                this.$router.push('/login');
+            handleSubmit(){
+                localStorage.setItem('username',this.username)
+                localStorage.setItem('email',this.email)
+                localStorage.setItem('password',this.password)
             }
+            // async handleSubmit(){
+            //     await axios.post('register', {
+            //         username : this.username,
+            //         email : this.email,
+            //         password : this.password
+            //     });
+            //     this.$router.push('/login');
+            // }
         }
     }
 </script>
