@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import axios from 'axios'
     export default{
         name: 'Register',
         data(){
@@ -33,6 +32,10 @@ import axios from 'axios'
                 localStorage.setItem('username',this.username)
                 localStorage.setItem('email',this.email)
                 localStorage.setItem('password',this.password)
+                alert('REGISTER SUKSES, SILAKAN LOGIN!')
+                this.username = ''
+                this.email = ''
+                this.password = ''
             }
             // async handleSubmit(){
             //     await axios.post('register', {

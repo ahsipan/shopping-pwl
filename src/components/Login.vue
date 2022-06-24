@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default{
     name: "Login",
     data(){
@@ -27,15 +26,25 @@ export default{
         }
     },
     methods:{
-        async handleSubmit(){
-            const response = await axios.post('login', {
-                email: this.email,
-                password: this.password
-            });
-            localStorage.setItem('token', response.data.token)
-            this.$router.push('/productlist');
-
+        handleSubmit(){
+            if (localStorage.getItem('email')==this.email){
+                if(localStorage.getItem('password')==this.password){
+                    alert('Login Berhasil')
+                    this.$router.push('/')
+                }
+            }else{
+                alert('Login Gagal')
+            }
         }
+        // async handleSubmit(){
+        //     const response = await axios.post('login', {
+        //         email: this.email,
+        //         password: this.password
+        //     });
+        //     localStorage.setItem('token', response.data.token)
+        //     this.$router.push('/productlist');
+
+        // }
     }
 }
 </script>
